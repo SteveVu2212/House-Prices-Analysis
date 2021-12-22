@@ -14,12 +14,9 @@ While the project confirms the importance of fundamental variables such as livin
 
 The project goes through four main steps of data visualization, data processing, feature engineering, and modeling. The exploratory data analysis (EDA) is to extract the initial insight of the dataset by systematically grouping graphs together. The data processing step is heavily into transforming categorical and ordinal variables into numeric variables, and coping with missing values as well as outliers. Missing values account for 5.8% of the dataset while there are two outliers being removed.
 Before building up a regression model, the feature engineering is critical to standardize predictor variables and log transform the dependent variable in which the density is heavily right skewed. Lastly, I created a linear model with horseshoe prior regularization that is able to shrink the posterior for some regression coefficient more tightly towards 0. The model is as below.
-$$
-y_{i} \sim Normal(\beta_{i}, \sigma^2)\\
-\beta_{i} \sim Normal(0,\lambda_{i}^2\tau^2)\\
-\lambda_{i} \sim HalfCauchy(0,1)\\
-\tau \sim HalfCauchy(1,\frac{p_{0}}{p-p_{0}}\frac{\sigma}{\sqrt{n}})
-$$
+
+![](https://github.com/SteveVu2212/LandingOnTheMoon/blob/main/Images/Learning%20Algorithm.png)
+
 In the model, the prior means that the coefficient $\beta_{i}$ is normally distributed with means of 0 and standard deviation of $\tau\lambda_{i}$. $\tau$ is a common global scale that shrinks all the coefficients $\beta_{i}$ toward zero. $\lambda_{i}$ is a local parameter that allows some of the coefficients $\beta_{i}$ to escape the shrinkage and follows a half-Cauchy of (0,1). $p$ is the number of predictor variables, $p_{0}$ is the expected number of significant predictors, and $n$ is the size of the dataset.
 
 ## Results
