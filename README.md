@@ -21,4 +21,6 @@ In the model, the prior means that the coefficient <img src="https://render.gith
 
 ## Results
 
+Below is a directed acyclic graph whose nodes represent predictor variables having significant impacts on house prices in Ames, Iowa state in 2006-2010.
+
 ![](https://github.com/SteveVu2212/House-Prices-Analysis/blob/main/Analysis_files/pictures/DAG.png)
